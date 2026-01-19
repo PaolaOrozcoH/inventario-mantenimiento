@@ -22,6 +22,7 @@ function render(rows){
     </td>
     </tr>`).join("");
 }
+
 function aplicarFiltros(){
     const q = search.value.trim().toLowerCase();
     const area = filtroArea.value;
