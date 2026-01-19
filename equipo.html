@@ -1,0 +1,78 @@
+    <!-- CLASIFICAR Los equipos EN CATEGORIAS -->
+     <!-- Como en el excel, basicas, etc -->
+      <!-- maybe poner lista de pendientes, ponerles id -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario equipos</title>
+    <link rel="stylesheet" href="equipo.css">
+</head>
+<body>
+    <header class="top">
+    <h1 class="titulo">INVENTARIO DE EQUIPOS</h1>
+    <!--<h2>Lista de equipos</h2>-->
+    <a href="index.html" class="btn-inicio">INICIO</a>
+    <div class="filtros">
+        <input id="search" type="text" placeholder="Buscar equipo..."/>
+
+        <select id="filtroArea">
+            <option value="">Todas las áreas</option>
+        </select>
+
+        <select id="filtroComprar">
+            <option value="">Falta comprar (todos)</option>
+            <!--<option value="Sí">Sí</option>-->
+            <td><span class="badge-falta badge-si">Sí</span></td>
+            <td><span class="badge-falta badge-no">No</span></td>
+            <!--<option value="No">No</option>-->
+        </select>
+    </div>
+    </header>
+    <main class="contenedor">
+    <div class="tabla-contenedor">
+        <table class="tabla">
+        <thead>
+        <tr>
+        <th>ID</th>
+        <th>ÁREA</th>
+        <th>DESCRIPCIÓN</th>
+        <th>CANTIDAD</th>
+        <th>FALTA POR COMPRAR</th>
+        <th>NOTAS</th>
+        <th>FOTO</th>
+        </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+        </table>
+    </div>
+    </main>
+<!--MODAL DETALLE-->
+    <div id="modal" class="modal hidden">
+    <div class="modal-card" role="dialog" aria-modal="true">
+    <button id="modalClose" class="modal-close" type="button">Cerrar</button>
+    <div class="modal-grid">
+     <img id="modalImg" class="modal-img" alt="Foto del producto"/>    
+    
+     <div class="modal-info">
+        <h2 id="modalTitulo" class="modal-titulo"></h2>
+
+        <p><b>Área:</b> <span id="modalArea"></span></p>
+        <p><b>Cantidad:</b> <span id="modalCantidad"></span></p>
+        <p><b>Estado:</b> <span id="modalEstado"></span></p>
+        <p><b>Falta comprar:</b> <span id="modalComprar"></span></p>
+        <p><b>Observaciones:</b> <span id="modalObs"></span></p>
+        <p><b>Notas:</b> <span id="modalNotas"></span></p>
+        <p><b>Número de serie:</b> <span id="modalSerie"></span></p>
+     </div>
+    </div>
+    <div id="detalleEquipo"></div>
+    </div>
+
+
+
+
+<script src="equipo.js"></script>    
+</body>
+</html>

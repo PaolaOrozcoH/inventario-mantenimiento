@@ -1,0 +1,294 @@
+body {
+  margin: 0;
+  font-family: -apple-system, system-ui, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #1a1f36 0%, #2c3e50 50%, #34495e 100%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.top {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titulo {
+  margin: 40px 0 30px;
+  text-align: center;
+  font-size: 48px;
+  color: #0095ff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filtros input,
+.filtros select {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  min-width: 220px;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.filtros input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.filtros input:focus,
+.filtros select:focus {
+  outline: none;
+  border-color: rgba(0, 149, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 149, 255, 0.3);
+}
+
+.filtros select option {
+  background: #1a1f36;
+  color: #fff;
+}
+
+.contenedor {
+  padding: 0 20px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tabla-contenedor {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  overflow-x: auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  min-width: 900px;
+}
+
+.tabla thead th {
+  background: rgba(0, 149, 255, 0.15);
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #0095ff;
+  border: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tabla thead th:first-child {
+  border-radius: 12px 0 0 12px;
+}
+
+.tabla thead th:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+.tabla tbody tr {
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tabla tbody tr:hover {
+  background: rgba(0, 149, 255, 0.1);
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(0, 149, 255, 0.2);
+}
+
+.tabla tbody td {
+  padding: 15px;
+  border: none;
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+.tabla tbody tr td:first-child {
+  border-radius: 12px 0 0 12px;
+  font-weight: 600;
+  color: #0095ff;
+}
+
+.tabla tbody tr td:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+.foto {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Botón INICIO */
+.btn-inicio {
+  background: rgba(0, 149, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 149, 255, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 149, 255, 0.4);
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.btn-inicio:hover {
+  background: rgba(0, 149, 255, 0.4);
+  border-color: rgba(0, 149, 255, 0.8);
+  box-shadow: 0 8px 25px rgba(0, 149, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Modal */
+.modal.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 999;
+}
+
+.modal-card {
+  background: rgba(26, 31, 54, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 149, 255, 0.2);
+  border: 1px solid rgba(0, 149, 255, 0.5);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(0, 149, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.modal-img {
+  width: 100%;
+  border-radius: 12px;
+  height: 320px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-titulo {
+  margin: 0 0 20px;
+  color: #0095ff;
+  font-size: 24px;
+}
+
+.modal-info p {
+  margin: 10px 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.modal-info strong {
+  color: #0095ff;
+}
+
+@media (max-width: 700px) {
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-img {
+    height: 240px;
+  }
+  
+  .titulo {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .filtros input,
+  .filtros select {
+    width: 100%;
+    min-width: unset;
+  }
+  
+  .tabla th,
+  .tabla td {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+/* Badges para falta por comprar */
+.badge-falta {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-si {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-no {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+/* Fin Modal */
