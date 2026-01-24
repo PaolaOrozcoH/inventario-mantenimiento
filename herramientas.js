@@ -51,8 +51,16 @@ async function init(){
     filtroArea.addEventListener("change", aplicarFiltros);
     filtroComprar.addEventListener("change", aplicarFiltros);
 }
-
+//PRUEBAAA
 init();
+const btnLimpiar = document.getElementById("btnLimpiar");
+
+btnLimpiar.addEventListener("click", () => {
+  search.value = "";
+  filtroArea.value = "";
+  filtroComprar.value = "";
+  render(data);
+});
 
 //modal
 // ===== Modal =====
