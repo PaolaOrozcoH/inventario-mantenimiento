@@ -56,6 +56,16 @@ async function init(){
 }
 
 init();
+//PRUEBA!!!
+const btnLimpiar = document.getElementById("btnLimpiar");
+
+btnLimpiar.addEventListener("click", () => {
+  search.value = "";
+  filtroArea.value = "";
+  filtroComprar.value = "";
+  render(data);
+});
+
 
 //modal
 // ===== Modal =====
